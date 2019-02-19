@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { updateToDo } from '../../actions';
 import styled from 'styled-components';
-import {withRouter} from 'react-router-dom';
-
+import { withRouter } from 'react-router-dom';
 
 const EditNoteForm = styled.form`
     display: flex;
@@ -72,19 +71,16 @@ class EditNote extends React.Component {
         this.state = {
             note: [],
             title: '',
-            textBody: '',
-            // content: '',
+            content: '',
         }
     }
 
-    componentDidMount(){
-        // const note = this.props.notes.find(item=> `${item._id}` === this.props.match.params.id);
-        const note = this.props.notes.find(item=> `${item.id}` === this.props.match.params.id);
+    componentDidMount() {
+        const note = this.props.notes.find(item => `${item.id}` === this.props.match.params.id);
 
         this.setState({
             note: note,
             title: note.title,
-            // textBody: note.textBody,
             content: note.content,
         })
     }
@@ -97,17 +93,13 @@ class EditNote extends React.Component {
         event.preventDefault();
         const updatedToDo = {
             title: this.state.title,
-            textBody: this.state.textBody,
-            // _id: this.state.note._id,
+            content: this.state.content,
             id: this.state.note.id,
 
         }
-        // this.props.updateToDo(updatedToDo._id, updatedToDo);
         this.props.updateToDo(updatedToDo.id, updatedToDo);
 
-        // this.props.history.push(`/notes/${this.state.note._id}`)
-        this.props.history.push(`/notes/${this.state.note.id}`)
-
+        this.props.history.push(`/notes`);
     }
 
     render() {
@@ -116,10 +108,11 @@ class EditNote extends React.Component {
                 <EditNoteH3>Edit Note:</EditNoteH3>
                 <EditNoteForm onSubmit={this.submitHandler}>
                     <EditNoteInput type='text' name='title' placeholder='Note Title' value={this.state.title} onChange={this.inputHandler} />
-                    {/* <EditNoteTextArea type='text' name='textBody' placeholder='Note Content' value={this.state.textBody} onChange={this.inputHandler} /> */}
                     <EditNoteTextArea type='text' name='content' placeholder='Note Content' value={this.state.content} onChange={this.inputHandler} />
 
+
                     <EditNoteSubmitButton type='submit'>Update</EditNoteSubmitButton>
+
                 </EditNoteForm>
             </div>
         )

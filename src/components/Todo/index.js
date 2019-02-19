@@ -41,10 +41,8 @@ const TextBodyP = styled.p`
 
 const ToDo = (props) => {
     let toDoContent = props.content;
-    // let toDoContent = props.textBody;
 
     if(props.content.length > 160) { toDoContent = toDoContent.substring(0,160) + '...'}
-    // if(props.textBody.length > 160) { toDoContent = toDoContent.substring(0,160) + '...'}
 
     let toDoTitle = props.title;
     
@@ -53,6 +51,7 @@ const ToDo = (props) => {
     return(
         <ToDoDiv>
             <Link to={`/notes/${props.id}`}>
+            <h3>Why Don't I work?</h3>
         {/* //  onClick = { () => { */}
         {/* //     props.getToDo(props.id);
         //     props.history.push(`/notes/${props.id}`)

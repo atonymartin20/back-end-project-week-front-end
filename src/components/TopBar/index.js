@@ -1,18 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import '../App/index.css';
 
-const SideBarDiv = styled.div`
-    width: 25%;
+const TopBarDiv = styled.div`
+    width: 100%;
+    height: 100px;
     background-color: #D8D8D8;
     padding: 0px 1.5%;
-    border-right: 2px solid #979797;
+    border-bottom: 2px solid #979797;
 `;
 
-const SideBarH1 = styled.h1`
+const TopBarH1 = styled.h1`
     color: 4A4A4A;
-    font-size: 5rem;
+    font-size: 5.2rem;
     text-align: left;
     margin: 0px;
     padding: 0px;
@@ -24,7 +23,7 @@ const SideBarH1 = styled.h1`
     margin-bottom: 30px;
 `;
 
-const SideBarButton = styled.div`
+const TopBarButton = styled.div`
     height: 62px;
     border: 2px solid #929898;
     background-color: #2BC1C4;
@@ -38,14 +37,13 @@ const SideBarButton = styled.div`
     cursor: pointer;
 `;
 
-const SideBar = () => {
+const TopBar = () => {
     return (
-        <SideBarDiv>
-            <SideBarH1>Lambda Notes</SideBarH1>
-            <Link to='/notes'><SideBarButton>View Your Notes</SideBarButton></Link>
-            <Link to='/create'><SideBarButton>+ Create New Note</SideBarButton></Link>
-        </SideBarDiv>
+        <TopBarDiv>
+            <TopBarH1>Lambda Notes</TopBarH1>
+
+        </TopBarDiv>
     )
 }
 
-export default SideBar;
+export default TopBar;

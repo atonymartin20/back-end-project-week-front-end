@@ -11,9 +11,10 @@ import ViewOneNote from '../ViewOneNote';
 import '../App/index.css';
 
 const MainContainerDiv = styled.div`
-    width: 90%;
+    width: 71.85%;
     background-color: #F3F3F3;
     padding: 0px;
+    margin: 0px;
 `;
 
 class MainContainer extends React.Component {

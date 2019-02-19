@@ -61,8 +61,8 @@ class ViewOneNote extends React.Component {
     }
 
     componentDidMount(){
-        const note = this.props.notes.find(item=> `${item._id}` === this.props.match.params.id);
-        // const note = this.props.notes.find(item=> `${item.id}` === this.props.match.params.id);
+        // const note = this.props.notes.find(item=> `${item._id}` === this.props.match.params.id);
+        const note = this.props.notes.find(item=> `${item.id}` === this.props.match.params.id);
 
         this.setState({
             note: note,

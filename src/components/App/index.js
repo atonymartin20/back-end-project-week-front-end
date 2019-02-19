@@ -5,6 +5,7 @@ import './index.css';
 import withRouter from 'react-router-dom/withRouter';
 import MainContainer from '../MainContainer';
 import { connect } from 'react-redux';
+import TopBar from '../TopBar';
 
 const CenteredDiv = styled.div`
 	margin: 0 auto;
@@ -12,6 +13,7 @@ const CenteredDiv = styled.div`
 	width: 100%;
 	margin-top: 50px;
 	display: flex;
+	flex-wrap: wrap;
 `;
 
 class App extends React.Component {
@@ -19,6 +21,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<CenteredDiv>
+				<TopBar />
 				<SideBar />
 				<MainContainer />
 			</CenteredDiv>
