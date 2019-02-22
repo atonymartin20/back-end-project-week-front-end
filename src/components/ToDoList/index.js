@@ -10,7 +10,7 @@ const ToDoListMainDiv = styled.div`
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-
+    width: 100%;
 `;
 
 const ToDoListDiv = styled.div`
@@ -21,7 +21,6 @@ const ToDoListDiv = styled.div`
     margin: 0px;
     padding: 0px;
     width: 100%;
-
 `;
 
 const ToDoListH3 = styled.h3`

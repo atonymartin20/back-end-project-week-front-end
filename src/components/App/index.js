@@ -1,30 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
-import SideBar from '../Sidebar';
 import './index.css';
 import withRouter from 'react-router-dom/withRouter';
 import MainContainer from '../MainContainer';
 import { connect } from 'react-redux';
-import TopBar from '../TopBar';
+import Homepage from '../Homepage';
 
-const CenteredDiv = styled.div`
-	margin: 0 auto;
-	max-width: 1364px;
-	width: 100%;
-	margin-top: 50px;
-	display: flex;
-	flex-wrap: wrap;
-`;
+import { Route } from 'react-router-dom';
 
 class App extends React.Component {
 
 	render() {
 		return (
-			<CenteredDiv>
-				<TopBar />
-				<SideBar />
-				<MainContainer />
-			</CenteredDiv>
+			<div>
+				<Route exact path='/' component={ Homepage } />
+				<Route path='/create' component={ MainContainer } />
+                <Route exact path ='/notes' component={ MainContainer } />
+                <Route path='/notes/:id' component={ MainContainer } />
+                <Route path='/edit/:id' component={ MainContainer } />
+			</div>
 		);
 	}
 }

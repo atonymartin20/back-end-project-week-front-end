@@ -99,12 +99,13 @@ class EditNote extends React.Component {
         }
         this.props.updateToDo(updatedToDo.id, updatedToDo);
 
-        this.props.history.push(`/notes`);
+        window.location.href = 'http://localhost:3000/notes';
     }
 
     render() {
         return (
             <div>
+                
                 <EditNoteH3>Edit Note:</EditNoteH3>
                 <EditNoteForm onSubmit={this.submitHandler}>
                     <EditNoteInput type='text' name='title' placeholder='Note Title' value={this.state.title} onChange={this.inputHandler} />

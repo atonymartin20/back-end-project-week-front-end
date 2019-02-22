@@ -10,14 +10,14 @@ const ToDoDiv = styled.div`
     height: 300px;
     border: 2px solid #BCBCBC;
     width: 100%;
+    background-color: white;
+    margin-bottom: 25px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    flex-wrap: wrap;
     flex-direction: column;
-    background-color: white;
-    margin-bottom: 25px;
-`;
+    flex-wrap: wrap;
+    `;
 
 const TitleH3 = styled.h3`
     font-size: 3.0rem;
@@ -36,6 +36,8 @@ const TextBodyP = styled.p`
     text-overflow: ellipsis-lastline;
     font-size: 2.0rem;
     margin-top: 0px;
+    max-width: 244px;
+    height: 210px;
 `;
 
 
@@ -51,16 +53,9 @@ const ToDo = (props) => {
     return(
         <ToDoDiv>
             <Link to={`/notes/${props.id}`}>
-            <h3>Why Don't I work?</h3>
-        {/* //  onClick = { () => { */}
-        {/* //     props.getToDo(props.id);
-        //     props.history.push(`/notes/${props.id}`)
-        // }}> */}
-        
-                {/* <TitleH3>{props.title}</TitleH3> */}
+
                 <TitleH3>{toDoTitle}</TitleH3>
 
-                {/* // <TextBodyP>{props.textBody}</TextBodyP> */}
                 <TextBodyP>{toDoContent}</TextBodyP>
 
             </Link>

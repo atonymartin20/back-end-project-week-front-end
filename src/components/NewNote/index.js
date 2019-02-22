@@ -70,7 +70,6 @@ class AddToDo extends React.Component {
 
         this.state = {
             title: '',
-            // textBody: '',
             content: '',
         }
     }
@@ -84,11 +83,10 @@ class AddToDo extends React.Component {
         this.props.addingToDo(this.state)
         this.setState({
             title: '',
-            // textBody: '',
             content: '',
 
         })
-        this.props.history.push('/notes');
+        window.location.href = 'http://localhost:3000/notes';
     }
 
     render() {
@@ -97,7 +95,6 @@ class AddToDo extends React.Component {
                 <NewNoteH3>Create New Note:</NewNoteH3>
                 <NewNoteForm onSubmit={this.submitHandler}>
                     <NewNoteInput type='text' name='title' placeholder='Note Title' value={this.state.title} onChange={this.inputHandler} />
-                    {/* <NewNoteTextArea type='text' name='textBody' placeholder='Note Content' value={this.state.textBody} onChange={this.inputHandler} /> */}
                     <NewNoteTextArea type='text' name='content' placeholder='Note Content' value={this.state.content} onChange={this.inputHandler} />
                     <NewNoteSubmitButton type='submit'>Save</NewNoteSubmitButton>
                 </NewNoteForm>
