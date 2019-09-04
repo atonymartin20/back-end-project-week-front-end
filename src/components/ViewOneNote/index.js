@@ -82,8 +82,6 @@ class ViewOneNote extends React.Component {
     deleteThatNote = () => {
         this.props.deleteToDo(this.state.note.id)
         window.location.href = '/notes';
-
-        // this.props.history.push('/notes')
     }
 
     updateRoute = () => {

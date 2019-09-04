@@ -51,13 +51,9 @@ class ToDoList extends React.Component {
             <ToDoListMainDiv>
                 <ToDoListH3>Your Notes:</ToDoListH3>
                 <ToDoListDiv>
-                {/* {this.props.fetching ? <h2>Fetching Data. Please Wait</h2> : null }
-                {this.props.error !== '' ? <h2>{this.props.error}</h2>: '' } */}
                     {this.props.notes.map( note => (
                         < ToDo note={ note } key={note.id} id={note.id} content={note.content} title={note.title} getToDo={this.props.getToDo} history={this.props.history} />
-                        // <h3>o I work</h3>
-                        
-                        ))}
+                    ))}
                 </ToDoListDiv>
             </ToDoListMainDiv>
         )

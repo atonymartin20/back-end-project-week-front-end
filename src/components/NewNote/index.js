@@ -86,7 +86,7 @@ class AddToDo extends React.Component {
             content: '',
 
         })
-        window.location.href = 'http://localhost:3000/notes';
+        window.location.href = '/notes';
     }
 
     render() {

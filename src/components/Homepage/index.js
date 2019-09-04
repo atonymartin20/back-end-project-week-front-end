@@ -173,9 +173,7 @@ class Homepage extends React.Component {
                         </HomepageFormDiv>
 
                         <HomepageButtonDiv>
-                            {/* <NavLink to='/notes'> */}
                                 <HomepageButton type='submit' >Register</HomepageButton>
-                            {/* </NavLink> */}
                         </HomepageButtonDiv>
 
                     </HomepageForm>

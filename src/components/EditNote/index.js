@@ -99,7 +99,7 @@ class EditNote extends React.Component {
         }
         this.props.updateToDo(updatedToDo.id, updatedToDo);
 
-        window.location.href = 'http://localhost:3000/notes';
+        window.location.href = '/notes';
     }
 
     render() {
