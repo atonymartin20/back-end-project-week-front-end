@@ -46,7 +46,7 @@ class MainContainer extends React.Component {
 
     componentDidMount() {
         const token = localStorage.getItem('jwt');
-        const endpoint = 'http://localhost:6333/api/users';
+        const endpoint = 'http://localhost:6334/api/users';
         const options = {
             headers: {
                 Authorization: token

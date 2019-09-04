@@ -9,12 +9,11 @@ top: 0;
 width: 100%;
 height: 100%;
 overflow: auto;
-background-color: rgb(30,30,30);
 background-color: rgb(30,30,30,0.4);
 `;
 
 const DeleteModalDiv = styled.div`
-    width: 50%;
+    width: 40%;
     border: 1px solid #888;
     background-color: #fefefe;
     margin: 15% auto;
@@ -28,7 +27,7 @@ const ModalButton = styled.div`
     height: 5vh;
     border: 1px solid darkgrey;
     border-radius: 5px;
-    background: ${props=> props.primary ? "rgb(0, 187, 191)" : "rgb(218, 0, 0)"};
+    background-color: ${props=> props.primary ? "rgb(0, 187, 191)" : "red"};
     color: white;
     display: flex;
     justify-content: center;

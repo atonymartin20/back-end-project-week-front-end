@@ -11,7 +11,7 @@ const SignInForm = styled.form`
 `;
 
 const SignInInput = styled.input`
-    margin-right: 10px;
+    margin-right: 30px;
     height: 25px;
     font-size: 1.5rem;
 `;
@@ -28,7 +28,7 @@ const SignInButton = styled.button`
     color: #FFFFFF;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center;yy
     font-size: 2.1rem;
     font-weight: 600;
     cursor: pointer;
@@ -52,16 +52,16 @@ class SignIn extends React.Component {
         event.preventDefault();
         console.log(this.state);
         const credentials = this.state;
-        const endpoint = 'http://localhost:6333/api/login';
+        const endpoint = 'http://localhost:6334/api/login';
         axios.post(endpoint, credentials)
-        .then(res => {
-            console.log('response data from login', res.data);
-            localStorage.setItem('jwt', res.data.token);
-            window.location.href = 'http://localhost:3000/notes';
-        })
-        .catch(err => {
-            console.log('err from login', err);
-        });
+            .then(res => {
+                console.log('response data from login', res.data);
+                localStorage.setItem('jwt', res.data.token);
+                window.location.href = 'http://localhost:3000/notes';
+            })
+            .catch(err => {
+                console.log('err from login', err);
+            });
     }
 
     render() {

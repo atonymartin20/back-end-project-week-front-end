@@ -53,7 +53,7 @@ const ToDo = (props) => {
     return(
         <ToDoDiv>
             <Link to={`/notes/${props.id}`}>
-
+                <h2>{props.id}</h2>
                 <TitleH3>{toDoTitle}</TitleH3>
 
                 <TextBodyP>{toDoContent}</TextBodyP>

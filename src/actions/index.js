@@ -9,7 +9,7 @@ export const UPDATE_TODO = 'UPDATE_TODO'
 export const fetchingToDos = () => {
 	return (dispatch) => {
 		dispatch({ type: FETCHING })
-		axios.get(`http://localhost:6333/api/notes`)
+		axios.get(`http://localhost:6334/api/notes`)
 			.then( response => {
 				dispatch({
 					type: GET_TODOS,
@@ -26,10 +26,34 @@ export const fetchingToDos = () => {
 	}
 }
 
+
+// EDIT
+
+// export const fetchingToDos = () => {
+// 	return (dispatch) => {
+// 		dispatch({ type: Object.assign( {}, this.state, {fetching: true }) })
+// 		axios.get(`http://localhost:6334/api/notes`)
+// 			.then( response => {
+// 				dispatch({
+// 					type: Object.assign( {}, this.state, { notes: this.state.notes, fetching: false, error: '' }),
+// 					notes: response.data,
+// 				})
+// 			})
+
+// 			.catch( error => {
+// 				dispatch({
+// 					type: ERROR,
+// 					errorMessage: 'Trouble finding To Dos ...',
+// 				})
+// 			})
+// 	}
+// }
+
+// EDIT
 export const getToDo = (id) => {
 	return(dispatch) => {
 		dispatch({ type: FETCHING });
-		axios.get(`http://localhost:6333/api/notes/${id}`)
+		axios.get(`http://localhost:6334/api/notes/${id}`)
 			.then ( response => {
 				dispatch ({
 					type: GET_TODO,
@@ -49,7 +73,7 @@ export const getToDo = (id) => {
 export const addingToDo = (newToDo) => {
 	return (dispatch) => {
 		dispatch({ type: FETCHING });
-		axios.post('http://localhost:6333/api/notes', newToDo)
+		axios.post('http://localhost:6334/api/notes', newToDo)
 			.then( dispatch(fetchingToDos) )
 			
 			.catch( error => {
@@ -64,7 +88,7 @@ export const addingToDo = (newToDo) => {
 export const deleteToDo = (id) => {
 	return (dispatch) => {
 		dispatch({ type: FETCHING });
-		axios.delete(`http://localhost:6333/api/notes/${id}`)
+		axios.delete(`http://localhost:6334/api/notes/${id}`)
 			.then( dispatch(getToDo))
 
   
@@ -80,7 +104,7 @@ export const deleteToDo = (id) => {
 export const updateToDo = (id, updatedToDo) => {
 	return (dispatch) => {
 		dispatch({ type: FETCHING })
-		axios.put(`http://localhost:6333/api/notes/${id}`, updatedToDo)
+		axios.put(`http://localhost:6334/api/notes/${id}`, updatedToDo)
 			.then( dispatch(fetchingToDos) )
 
 

@@ -110,7 +110,7 @@ class Homepage extends React.Component {
         event.preventDefault();
         console.log(this.state);
         const credentials = this.state;
-        const endpoint = 'http://localhost:6333/api/register';
+        const endpoint = 'http://localhost:6334/api/register';
         axios.post(endpoint, credentials)
             .then(res => {
                 localStorage.setItem('jwt', res.data.token);
@@ -159,7 +159,7 @@ class Homepage extends React.Component {
 
                         <HomepageFormDiv>
                             <HomepageLabel htmlFor="password">Password:</HomepageLabel>
-                            <HomepageInput name="password" value={this.state.password} onChange={this.InputHandler} type='text' />
+                            <HomepageInput name="password" value={this.state.password} onChange={this.InputHandler} type='password' />
                         </HomepageFormDiv>
 
                         <HomepageFormDiv>

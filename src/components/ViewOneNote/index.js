@@ -8,7 +8,6 @@ import DeleteModal from '../DeleteModal';
 
 const UpdateToDoDiv = styled.div`
     margin: 0px 4%;
-
 `;
 
 const SpanDivs = styled.div`
@@ -61,9 +60,7 @@ class ViewOneNote extends React.Component {
     }
 
     componentDidMount(){
-        // const note = this.props.notes.find(item=> `${item._id}` === this.props.match.params.id);
         const note = this.props.notes.find(item=> `${item.id}` === this.props.match.params.id);
-
         this.setState({
             note: note,
         })
@@ -83,14 +80,14 @@ class ViewOneNote extends React.Component {
     }
 
     deleteThatNote = () => {
-        // this.props.deleteToDo(this.state.note._id)
         this.props.deleteToDo(this.state.note.id)
-        this.props.history.push('/notes')
+        window.location.href = '/notes';
+
+        // this.props.history.push('/notes')
     }
 
     updateRoute = () => {
         this.props.history.push(`/edit/${this.state.note.id}`)
-        // this.props.history.push(`/edit/${this.state.note._id}`)
 
     }
 
@@ -109,7 +106,6 @@ class ViewOneNote extends React.Component {
                     </SpanDivs>
 
                     <TitleH3>{this.state.note.title}</TitleH3>
-                    {/* <SingleTextP>{this.state.note.textBody}</SingleTextP> */}
                     <SingleTextP>{this.state.note.content}</SingleTextP>
 
 
